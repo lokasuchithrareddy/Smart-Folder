@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Queries Page</title>
+	<style type="text/css">
+	body
+	{
+		 background-image: url('registerbg.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
+  padding-top: 10px;
+	}
+		.c1
+		{
+			position: absolute; left: 50%; top:50%;margin-top:-185px;margin-left:-225px; width: 400px; height:380px; background:#686868; border:1px solid black;
+		}
+		.c
+		{
+			font-style:italic;
+			font-size:25px;
+			text-align:center;
+			color:#C0C0C0;
+		}
+		.zoom {
+  transition: transform .2s; /* Animation */
+  text-align: center;
+}
+.zoom:hover {
+  transform: scale(1.25);
+}
+	</style>
+	<script type="text/javascript">
+		function check1() {
+			// body...
+		var email=document.getElementById('email').value;
+		var pwd=document.getElementById('pwd').value;
+		var cemail=new RegExp('[A-za-z0-9]+@gmail.com$');
+		var cpwd1=new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})$')
+/*
+^					The password string will start this way
+(?=.*[a-z])			The string must contain at least 1 lowercase alphabetical character
+(?=.*[A-Z])			The string must contain at least 1 uppercase alphabetical character
+(?=.*[0-9])			The string must contain at least 1 numeric character
+(?=.[!@#\$%\^&])	The string must contain at least one special character, but we are escaping reserved RegEx characters to avoid conflict
+(?=.{8,})			The string must be eight characters or longer
+*/
+		if(cemail.test(email)==false)
+		{
+			window.alert("Re-Enter Your Email");
+			return false;
+		}
+		else if(pwd.length<=8&&cpwd1.test(pwd)==false)
+		{
+			window.alert("1.The string must contain at least 1 lowercase alphabetical character<\n2.The string must contain at least 1 uppercase alphabetical character\n3.The string must contain at least 1 numeric character\n4.The string must contain at least one special character\nNote:but we are escaping reserved RegEx characters to avoid conflict\n5.The string must be eight characters or longer");
+			return false;
+		}
+		else if(pwd!=cpwd)
+		{
+			window.alert("Password and Confirm Password Shouldbe same");
+			return false;
+		}
+		else
+			return true;
+
+			
+	}
+	</script>
+</head>
+<body bgcolor="#696969">
+	<a href="index.html"><button class="zoom"><img src="back.jpg" height="40px" width="60px" align="padding-bottom" align="middle"></button></a>
+	<form action="login.php" method="post" onsubmit="return check1()">
+	<table style="float:center;padding-bottom:10px;padding-top:100px;padding-left:100px;position:fixed;">
+	<tr><td colspan="2"><input type="email" name="email" id="email" placeholder="Email" size="33" required></td></tr>
+	<tr><td  colspan="2"><input type="password" name="pwd" id="pwd" placeholder="Password" size="33" required></td></tr>
+	<tr><td><input type="reset" name="Reset">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="submit"></td></tr>
+</table>
+</form>
+</body>
+</html>

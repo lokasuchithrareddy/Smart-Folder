@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UploadFile</title>
+	<style type="text/css">
+	body
+	{
+		 background-image: url('upload.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
+  padding-top: 10px;
+	}
+}
+.zoom:hover {
+  transform: scale(1.25);
+	</style>
+</head>
+<body bgcolor="#C0C0C0">
+<form method="post" action="upload.php" enctype="multipart/form-data">
+	<table border="1" bordercolor="#C0C0C0" align="center" bgcolor="#C0C0C0">
+		<tr><td>Folder</td><td>
+			<select name="path" value="path" id=path><option>C</option><option>JAVA</option><option>WebTechnoloies</option><option>SQL</option><option>DataStructures</option><option>Python</option></select>
+		</td></tr>
+		<tr><td>Description</td><td><input type="text" name="description_entered" required></td></tr>
+		<tr><td colspan="2"><input type="file" name="file" required></td></tr>
+		<tr><td colspan="2"><input TYPE="submit" name="submit" value="upload"/></td></tr>
+	</table>
+</form>
+</body>
+</html>
