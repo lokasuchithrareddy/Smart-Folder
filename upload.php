@@ -15,6 +15,9 @@ $fileextension= substr($name, $position + 1);
 
 $fileextension= strtolower($fileextension);
 $a='upload/';
+if(!is_dir($a))
+mkdir($a);
+
 $b=$_POST['path'];
 
 $description= $_POST['description_entered'];
